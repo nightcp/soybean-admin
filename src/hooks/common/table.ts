@@ -38,23 +38,23 @@ export function useTable<A extends NaiveUI.TableApiFn>(config: NaiveUI.NaiveTabl
     apiParams,
     columns: config.columns,
     transformer: res => {
-      const { records = [], current = 1, size = 10, total = 0 } = res.data || {};
+      const { lists = [], page_no = 1, page_size = 10, count = 0 } = res.data || {};
 
       // Ensure that the size is greater than 0, If it is less than 0, it will cause paging calculation errors.
-      const pageSize = size <= 0 ? 10 : size;
+      const pageSize = page_size <= 0 ? 10 : page_size;
 
-      const recordsWithIndex = records.map((item, index) => {
+      const recordsWithIndex = lists.map((item, index) => {
         return {
           ...item,
-          index: (current - 1) * pageSize + index + 1
+          index: (page_no - 1) * pageSize + index + 1
         };
       });
 
       return {
         data: recordsWithIndex,
-        pageNum: current,
+        pageNum: page_no,
         pageSize,
-        total
+        total: count
       };
     },
     getColumnChecks: cols => {
@@ -124,8 +124,8 @@ export function useTable<A extends NaiveUI.TableApiFn>(config: NaiveUI.NaiveTabl
       pagination.page = page;
 
       updateSearchParams({
-        current: page,
-        size: pagination.pageSize!
+        page_no: page,
+        page_size: pagination.pageSize!
       });
 
       getData();
@@ -135,8 +135,8 @@ export function useTable<A extends NaiveUI.TableApiFn>(config: NaiveUI.NaiveTabl
       pagination.page = 1;
 
       updateSearchParams({
-        current: pagination.page,
-        size: pageSize
+        page_no: pagination.page,
+        page_size: pageSize
       });
 
       getData();
@@ -174,8 +174,8 @@ export function useTable<A extends NaiveUI.TableApiFn>(config: NaiveUI.NaiveTabl
     });
 
     updateSearchParams({
-      current: pageNum,
-      size: pagination.pageSize!
+      page_no: pageNum,
+      page_size: pagination.pageSize!
     });
 
     await getData();

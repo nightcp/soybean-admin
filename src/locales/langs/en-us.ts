@@ -243,7 +243,11 @@ const local: App.I18n.Schema = {
           changePasswordSuccess: 'Password changed successfully'
         }
       },
-      loginLog: 'Login Log',
+      loginLog: {
+        title: 'Login log',
+        device: 'Login Device',
+        createdAt: 'Login Time'
+      },
       operationLog: 'Operation Log'
     }
   },

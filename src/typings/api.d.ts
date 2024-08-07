@@ -8,16 +8,16 @@ declare namespace Api {
     /** common params of paginating */
     interface PaginatingCommonParams {
       /** current page number */
-      current: number;
+      page_no: number;
       /** page size */
-      size: number;
+      page_size: number;
       /** total count */
-      total: number;
+      count: number;
     }
 
     /** common params of paginating query list data */
     interface PaginatingQueryRecord<T = any> extends PaginatingCommonParams {
-      records: T[];
+      lists: T[];
     }
 
     /**
@@ -32,16 +32,10 @@ declare namespace Api {
     type CommonRecord<T = any> = {
       /** record id */
       id: number;
-      /** record creator */
-      createBy: string;
       /** record create time */
-      createTime: string;
-      /** record updater */
-      updateBy: string;
+      created_at: string;
       /** record update time */
-      updateTime: string;
-      /** record status */
-      status: EnableStatus | null;
+      updated_at: string;
     } & T;
   }
 
@@ -51,6 +45,8 @@ declare namespace Api {
    * backend api module: "auth"
    */
   namespace Auth {
+    type CommonSearchParams = Pick<Common.PaginatingCommonParams, 'page_no' | 'page_size'>;
+
     interface LoginToken {
       token: string;
       refreshToken: string;
@@ -61,6 +57,20 @@ declare namespace Api {
       roles: string[];
       buttons: string[];
     }
+
+    /** login log */
+    type LoginLog = Common.CommonRecord<{
+      ip: string;
+      platform: string;
+      os: string;
+      browser: string;
+    }>;
+
+    /** login log search params */
+    type LoginLogSearchParams = CommonType.RecordNullable<Pick<Api.Auth.LoginLog, 'ip'> & CommonSearchParams>;
+
+    /** login log list */
+    type LoginLogList = Common.PaginatingQueryRecord<LoginLog>;
   }
 
   /**

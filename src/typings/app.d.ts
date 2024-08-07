@@ -481,7 +481,11 @@ declare namespace App {
               changePasswordSuccess: string;
             };
           };
-          loginLog: string;
+          loginLog: {
+            title: string;
+            device: string;
+            createdAt: string;
+          };
           operationLog: string;
         };
       };

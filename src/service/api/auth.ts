@@ -47,13 +47,7 @@ export function fetchCustomBackendError(code: string, msg: string) {
   return request({ url: '/auth/error', params: { code, msg } });
 }
 
-/**
- * 修改密码
- *
- * @param old_password 旧密码
- * @param new_password 新密码
- * @param confirm_password 确认密码
- */
+/** 修改密码 */
 export function fetchChangePassword(old_password: string, new_password: string, confirm_password: string) {
   return request({
     url: '/auth/password',
@@ -63,5 +57,14 @@ export function fetchChangePassword(old_password: string, new_password: string, 
       new_password,
       confirm_password
     }
+  });
+}
+
+/** 登录日志 */
+export function fetchLoginLog(params?: Api.Auth.LoginLogSearchParams) {
+  return request<Api.Auth.LoginLogList>({
+    url: '/auth/login-logs',
+    method: 'get',
+    params
   });
 }

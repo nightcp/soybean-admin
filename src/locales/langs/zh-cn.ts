@@ -243,7 +243,11 @@ const local: App.I18n.Schema = {
           changePasswordSuccess: '修改密码成功'
         }
       },
-      loginLog: '登录日志',
+      loginLog: {
+        title: '登录日志',
+        device: '登录设备',
+        createdAt: '登录时间'
+      },
       operationLog: '操作日志'
     }
   },
