@@ -471,6 +471,19 @@ declare namespace App {
           };
           creativity: string;
         };
+        userCenter: {
+          changePassword: {
+            title: string;
+            oldPassword: string;
+            newPassword: string;
+            confirmPassword: string;
+            common: {
+              changePasswordSuccess: string;
+            };
+          };
+          loginLog: string;
+          operationLog: string;
+        };
       };
       form: {
         required: string;

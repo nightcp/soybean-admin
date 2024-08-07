@@ -154,7 +154,8 @@ const local: App.I18n.Schema = {
     404: '页面不存在',
     500: '服务器错误',
     'iframe-page': '外链页面',
-    home: '首页'
+    home: '首页',
+    'user-center': '个人中心'
   },
   page: {
     login: {
@@ -231,6 +232,19 @@ const local: App.I18n.Schema = {
         desc5: 'Soybean 刚才把工作台页面随便写了一些，凑合能看了！'
       },
       creativity: '创意'
+    },
+    userCenter: {
+      changePassword: {
+        title: '修改密码',
+        oldPassword: '旧密码',
+        newPassword: '新密码',
+        confirmPassword: '确认密码',
+        common: {
+          changePasswordSuccess: '修改密码成功'
+        }
+      },
+      loginLog: '登录日志',
+      operationLog: '操作日志'
     }
   },
   form: {
@@ -245,7 +259,7 @@ const local: App.I18n.Schema = {
     },
     pwd: {
       required: '请输入密码',
-      invalid: '密码格式不正确，6-18位字符，包含字母、数字、下划线'
+      invalid: '密码格式不正确，6-16位字符，包含字母、数字、下划线'
     },
     confirmPwd: {
       required: '请输入确认密码',

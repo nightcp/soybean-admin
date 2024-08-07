@@ -97,13 +97,10 @@ function transformElegantRouteToVueRoute(
     if (component) {
       if (isSingleLevelRoute(route)) {
         const { layout, view } = getSingleLevelRouteComponent(component);
-
+  
         const singleLevelRoute: RouteRecordRaw = {
           path,
           component: layouts[layout],
-          meta: {
-            title: route.meta?.title || ''
-          },
           children: [
             {
               name,
@@ -113,35 +110,36 @@ function transformElegantRouteToVueRoute(
             } as RouteRecordRaw
           ]
         };
-
+  
         return [singleLevelRoute];
       }
-
+  
       if (isLayout(component)) {
         const layoutName = getLayoutName(component);
-
+  
         vueRoute.component = layouts[layoutName];
       }
-
+  
       if (isView(component)) {
         const viewName = getViewName(component);
-
+  
         vueRoute.component = views[viewName];
       }
-
+  
     }
   } catch (error: any) {
     console.error(`Error transforming route "${route.name}": ${error.toString()}`);
     return [];
   }
 
+  
   // add redirect to child
   if (children?.length && !vueRoute.redirect) {
     vueRoute.redirect = {
       name: children[0].name
     };
   }
-
+  
   if (children?.length) {
     const childRoutes = children.flatMap(child => transformElegantRouteToVueRoute(child, layouts, views));
 
@@ -168,7 +166,8 @@ const routeMap: RouteMap = {
   "500": "/500",
   "home": "/home",
   "iframe-page": "/iframe-page/:url",
-  "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?"
+  "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?",
+  "user-center": "/user-center"
 };
 
 /**

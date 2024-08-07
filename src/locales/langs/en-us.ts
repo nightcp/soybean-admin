@@ -154,7 +154,8 @@ const local: App.I18n.Schema = {
     404: 'Page Not Found',
     500: 'Server Error',
     'iframe-page': 'Iframe',
-    home: 'Home'
+    home: 'Home',
+    'user-center': 'User Center'
   },
   page: {
     login: {
@@ -231,6 +232,19 @@ const local: App.I18n.Schema = {
         desc5: 'Soybean just wrote some of the workbench pages casually, and it was enough to see!'
       },
       creativity: 'Creativity'
+    },
+    userCenter: {
+      changePassword: {
+        title: 'Change Password',
+        oldPassword: 'Old Password',
+        newPassword: 'New Password',
+        confirmPassword: 'Confirm Password',
+        common: {
+          changePasswordSuccess: 'Password changed successfully'
+        }
+      },
+      loginLog: 'Login Log',
+      operationLog: 'Operation Log'
     }
   },
   form: {
@@ -245,7 +259,7 @@ const local: App.I18n.Schema = {
     },
     pwd: {
       required: 'Please enter password',
-      invalid: '6-18 characters, including letters, numbers, and underscores'
+      invalid: '6-16 characters, including letters, numbers, and underscores'
     },
     confirmPwd: {
       required: 'Please enter password again',

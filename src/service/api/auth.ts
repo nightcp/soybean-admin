@@ -3,15 +3,15 @@ import { request } from '../request';
 /**
  * Login
  *
- * @param userName User name
+ * @param username User name
  * @param password Password
  */
-export function fetchLogin(userName: string, password: string) {
+export function fetchLogin(username: string, password: string) {
   return request<Api.Auth.LoginToken>({
     url: '/auth/login',
     method: 'post',
     data: {
-      userName,
+      username,
       password
     }
   });
@@ -45,4 +45,23 @@ export function fetchRefreshToken(refreshToken: string) {
  */
 export function fetchCustomBackendError(code: string, msg: string) {
   return request({ url: '/auth/error', params: { code, msg } });
+}
+
+/**
+ * 修改密码
+ *
+ * @param old_password 旧密码
+ * @param new_password 新密码
+ * @param confirm_password 确认密码
+ */
+export function fetchChangePassword(old_password: string, new_password: string, confirm_password: string) {
+  return request({
+    url: '/auth/password',
+    method: 'put',
+    data: {
+      old_password,
+      new_password,
+      confirm_password
+    }
+  });
 }

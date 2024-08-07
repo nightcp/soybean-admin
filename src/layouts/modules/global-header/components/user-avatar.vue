@@ -34,6 +34,15 @@ type DropdownOption =
 const options = computed(() => {
   const opts: DropdownOption[] = [
     {
+      label: $t('common.userCenter'),
+      key: 'logout',
+      icon: SvgIconVNode({ icon: 'ph:sign-out', fontSize: 18 })
+    },
+    {
+      type: 'divider',
+      key: 'divider'
+    },
+    {
       label: $t('common.logout'),
       key: 'logout',
       icon: SvgIconVNode({ icon: 'ph:sign-out', fontSize: 18 })
