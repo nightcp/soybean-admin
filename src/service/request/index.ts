@@ -24,7 +24,9 @@ export const request = createFlatRequest<App.Service.Response, RequestInstanceSt
       // set token
       const token = localStg.get('token');
       const Authorization = token ? `Bearer ${token}` : null;
-      Object.assign(headers, { Authorization });
+      // set lang
+      const lang = localStg.get('lang') || 'zh-CN';
+      Object.assign(headers, { Authorization }, { 'accept-language': lang });
 
       return config;
     },
