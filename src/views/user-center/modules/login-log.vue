@@ -2,13 +2,17 @@
 import { useTable } from '@/hooks/common/table';
 import { fetchLoginLog } from '@/service/api/auth';
 import { $t } from '@/locales';
+import LoginLogSearch from './login-log-search.vue';
 
-const { columns, data, loading, pagination } = useTable({
+const { columns, data, loading, pagination, searchParams, resetSearchParams, getDataByPage } = useTable({
   showTotal: true,
   apiFn: fetchLoginLog,
   apiParams: {
     page_no: 1,
-    page_size: 10
+    page_size: 10,
+    ip: null,
+    start_date: null,
+    end_date: null
   },
   columns: () => [
     {
@@ -45,6 +49,7 @@ const { columns, data, loading, pagination } = useTable({
 
 <template>
   <div class="min-h-500px flex-col-stretch gap-16px overflow-hidden lt-sm:overflow-auto">
+    <LoginLogSearch v-model:model="searchParams" @reset="resetSearchParams" @search="getDataByPage" />
     <NCard :bordered="false" size="small" class="sm:flex-1-hidden card-wrapper">
       <NDataTable
         :columns="columns"

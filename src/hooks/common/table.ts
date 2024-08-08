@@ -43,7 +43,8 @@ export function useTable<A extends NaiveUI.TableApiFn>(config: NaiveUI.NaiveTabl
       // Ensure that the size is greater than 0, If it is less than 0, it will cause paging calculation errors.
       const pageSize = page_size <= 0 ? 10 : page_size;
 
-      const recordsWithIndex = lists.map((item, index) => {
+      const records = lists || [];
+      const recordsWithIndex = records.map((item, index) => {
         return {
           ...item,
           index: (page_no - 1) * pageSize + index + 1

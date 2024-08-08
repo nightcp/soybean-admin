@@ -246,7 +246,10 @@ const local: App.I18n.Schema = {
       loginLog: {
         title: '登录日志',
         device: '登录设备',
-        createdAt: '登录时间'
+        createdAt: '登录时间',
+        form: {
+          ip: '请输入IP'
+        }
       },
       operationLog: '操作日志'
     }

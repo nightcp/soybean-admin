@@ -64,10 +64,14 @@ declare namespace Api {
       platform: string;
       os: string;
       browser: string;
+      start_date: string;
+      end_date: string;
     }>;
 
     /** login log search params */
-    type LoginLogSearchParams = CommonType.RecordNullable<Pick<Api.Auth.LoginLog, 'ip'> & CommonSearchParams>;
+    type LoginLogSearchParams = CommonType.RecordNullable<
+      Pick<Api.Auth.LoginLog, 'ip' | 'start_date' | 'end_date'> & CommonSearchParams
+    >;
 
     /** login log list */
     type LoginLogList = Common.PaginatingQueryRecord<LoginLog>;

@@ -9,7 +9,7 @@ import LoginLog from './modules/login-log.vue';
       <NTabPane name="changePassword" :tab="$t('page.userCenter.changePassword.title')">
         <ChangPassword />
       </NTabPane>
-      <NTabPane name="loginLog" :tab="$t('page.userCenter.loginLog')">
+      <NTabPane name="loginLog" :tab="$t('page.userCenter.loginLog.title')">
         <LoginLog />
       </NTabPane>
       <NTabPane name="operationLog" :tab="$t('page.userCenter.operationLog')">七里香</NTabPane>

@@ -43,25 +43,31 @@ async function handleReset() {
 </script>
 
 <template>
-  <NForm ref="formRef" :model="model" :rules="rules" size="large">
-    <NFormItem path="oldPassword" :label="$t('page.userCenter.changePassword.oldPassword')">
-      <NInput v-model:value="model.oldPassword" type="password" show-password-on="click" />
-    </NFormItem>
-    <NFormItem path="newPassword" :label="$t('page.userCenter.changePassword.newPassword')">
-      <NInput v-model:value="model.newPassword" type="password" show-password-on="click" />
-    </NFormItem>
-    <NFormItem path="confirmPassword" :label="$t('page.userCenter.changePassword.confirmPassword')">
-      <NInput v-model:value="model.confirmPassword" type="password" show-password-on="click" />
-    </NFormItem>
-    <NSpace :size="18" class="w-full">
-      <NButton type="primary" size="large" round block :loading="authStore.loginLoading" @click="handleSubmit">
-        {{ $t('common.confirm') }}
-      </NButton>
-      <NButton size="large" round block @click="handleReset">
-        {{ $t('common.reset') }}
-      </NButton>
-    </NSpace>
-  </NForm>
+  <NGrid responsive="screen" item-responsive>
+    <NGridItem span="6 m:6 l:6">
+      <NCard :bordered="false" size="small" class="card-wrapper">
+        <NForm ref="formRef" :model="model" :rules="rules" size="medium">
+          <NFormItem path="oldPassword" :label="$t('page.userCenter.changePassword.oldPassword')">
+            <NInput v-model:value="model.oldPassword" type="password" show-password-on="click" />
+          </NFormItem>
+          <NFormItem path="newPassword" :label="$t('page.userCenter.changePassword.newPassword')">
+            <NInput v-model:value="model.newPassword" type="password" show-password-on="click" />
+          </NFormItem>
+          <NFormItem path="confirmPassword" :label="$t('page.userCenter.changePassword.confirmPassword')">
+            <NInput v-model:value="model.confirmPassword" type="password" show-password-on="click" />
+          </NFormItem>
+          <NSpace :size="18" class="w-full" justify="end">
+            <NButton type="primary" size="medium" round block :loading="authStore.loginLoading" @click="handleSubmit">
+              {{ $t('common.confirm') }}
+            </NButton>
+            <NButton size="medium" round block @click="handleReset">
+              {{ $t('common.reset') }}
+            </NButton>
+          </NSpace>
+        </NForm>
+      </NCard>
+    </NGridItem>
+  </NGrid>
 </template>
 
 <style scoped></style>

@@ -246,7 +246,10 @@ const local: App.I18n.Schema = {
       loginLog: {
         title: 'Login log',
         device: 'Login Device',
-        createdAt: 'Login Time'
+        createdAt: 'Login Time',
+        form: {
+          ip: 'Please enter IP address'
+        }
       },
       operationLog: 'Operation Log'
     }

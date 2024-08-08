@@ -485,6 +485,9 @@ declare namespace App {
             title: string;
             device: string;
             createdAt: string;
+            form: {
+              ip: string;
+            };
           };
           operationLog: string;
         };
