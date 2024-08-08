@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ChangPassword from './modules/chang-password.vue';
 import LoginLog from './modules/login-log.vue';
+import OperationLog from './modules/operation-log.vue';
 </script>
 
 <template>
@@ -12,7 +13,9 @@ import LoginLog from './modules/login-log.vue';
       <NTabPane name="loginLog" :tab="$t('page.userCenter.loginLog.title')">
         <LoginLog />
       </NTabPane>
-      <NTabPane name="operationLog" :tab="$t('page.userCenter.operationLog')">七里香</NTabPane>
+      <NTabPane name="operationLog" :tab="$t('page.userCenter.operationLog.title')">
+        <OperationLog />
+      </NTabPane>
     </NTabs>
   </NFlex>
 </template>

@@ -489,7 +489,27 @@ declare namespace App {
               ip: string;
             };
           };
-          operationLog: string;
+          operationLog: {
+            title: string;
+            device: string;
+            createdAt: string;
+            behavior: string;
+            object: string;
+            form: {
+              ip: string;
+              object: string;
+              behavior: string;
+            };
+            behaviorOption: {
+              changePassword: string;
+              addRole: string;
+              editRole: string;
+              deleteRole: string;
+              addUser: string;
+              editUser: string;
+              deleteUser: string;
+            };
+          };
         };
       };
       form: {

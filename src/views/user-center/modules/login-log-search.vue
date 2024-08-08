@@ -44,7 +44,7 @@ function handleFormattedValue(value: [string, string]) {
             <NFormItemGi span="24 s:12 m:6" label="IP" class="pr-24px">
               <NInput v-model:value="model.ip" :placeholder="$t('page.userCenter.loginLog.form.ip')" />
             </NFormItemGi>
-            <NFormItemGi span="24 s:12 m:6" :label="$t('page.userCenter.loginLog.createdAt')">
+            <NFormItemGi span="24 s:12 m:6" :label="$t('page.userCenter.loginLog.createdAt')" class="pr-24px">
               <NDatePicker
                 v-model:value="dateRange"
                 date-value-on-close

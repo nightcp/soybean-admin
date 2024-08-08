@@ -251,7 +251,27 @@ const local: App.I18n.Schema = {
           ip: 'Please enter IP address'
         }
       },
-      operationLog: 'Operation Log'
+      operationLog: {
+        title: 'Operation log',
+        device: 'Login Device',
+        createdAt: 'Operation time',
+        behavior: 'Operational behavior',
+        object: 'Operation object',
+        form: {
+          ip: 'Please enter IP address',
+          object: 'Please enter the operation object',
+          behavior: 'Please select the action behavior'
+        },
+        behaviorOption: {
+          changePassword: 'Change Password',
+          addRole: 'Add Role',
+          editRole: 'Edit Role',
+          deleteRole: 'Delete Role',
+          addUser: 'Add User',
+          editUser: 'Edit User',
+          deleteUser: 'Delete User'
+        }
+      }
     }
   },
   form: {

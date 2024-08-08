@@ -68,3 +68,12 @@ export function fetchLoginLog(params?: Api.Auth.LoginLogSearchParams) {
     params
   });
 }
+
+/** 操作日志 */
+export function fetchOperationLlog(params?: Api.Auth.OperationLogSearchParams) {
+  return request<Api.Auth.OperationLogList>({
+    url: '/auth/operation-logs',
+    method: 'get',
+    params
+  });
+}

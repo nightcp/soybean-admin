@@ -251,7 +251,27 @@ const local: App.I18n.Schema = {
           ip: '请输入IP'
         }
       },
-      operationLog: '操作日志'
+      operationLog: {
+        title: '操作日志',
+        device: '登录设备',
+        createdAt: '操作时间',
+        behavior: '操作行为',
+        object: '操作对象',
+        form: {
+          ip: '请输入IP',
+          object: '请输入操作对象',
+          behavior: '请选择操作行为'
+        },
+        behaviorOption: {
+          changePassword: '修改密码',
+          addRole: '添加角色',
+          editRole: '编辑角色',
+          deleteRole: '删除角色',
+          addUser: '添加用户',
+          editUser: '编辑用户',
+          deleteUser: '删除用户'
+        }
+      }
     }
   },
   form: {

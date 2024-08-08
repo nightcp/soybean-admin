@@ -75,6 +75,26 @@ declare namespace Api {
 
     /** login log list */
     type LoginLogList = Common.PaginatingQueryRecord<LoginLog>;
+
+    /** operation log */
+    type OperationLog = Common.CommonRecord<{
+      ip: string;
+      platform: string;
+      os: string;
+      browser: string;
+      behavior: string;
+      object: string;
+      start_date: string;
+      end_date: string;
+    }>;
+
+    /** operation log search params */
+    type OperationLogSearchParams = CommonType.RecordNullable<
+      Pick<Api.Auth.OperationLog, 'ip' | 'behavior' | 'object' | 'start_date' | 'end_date'> & CommonSearchParams
+    >;
+
+    /** operation log list */
+    type OperationLogList = Common.PaginatingQueryRecord<OperationLog>;
   }
 
   /**
