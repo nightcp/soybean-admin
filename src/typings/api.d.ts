@@ -114,4 +114,40 @@ declare namespace Api {
       home: import('@elegant-router/types').LastLevelRouteKey;
     }
   }
+
+  /**
+   * namespace Manage
+   *
+   * backend api module: "manage"
+   */
+  namespace Manage {
+    type CommonSearchParams = Pick<Common.PaginatingCommonParams, 'page_no' | 'page_size'>;
+
+    /** user */
+    type User = Common.CommonRecord<{
+      username: string;
+      password: string;
+      role_id: string | null;
+      role_name: string;
+      last_login_at: string;
+      last_login_ip: string;
+    }>;
+
+    /** user search params */
+    type UserSearchParams = CommonType.RecordNullable<Pick<Api.Manage.User, 'username'> & CommonSearchParams>;
+
+    /** user list */
+    type UserList = Common.PaginatingQueryRecord<User>;
+
+    /** role */
+    type Role = Common.CommonRecord<{
+      name: string;
+    }>;
+
+    /** role search params */
+    type RoleSearchParams = CommonType.RecordNullable<CommonSearchParams>;
+
+    /** role list */
+    type RoleList = Common.PaginatingQueryRecord<Role>;
+  }
 }

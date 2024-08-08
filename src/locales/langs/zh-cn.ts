@@ -47,7 +47,9 @@ const local: App.I18n.Schema = {
     yesOrNo: {
       yes: '是',
       no: '否'
-    }
+    },
+    createdAt: '创建时间',
+    updatedAt: '更新时间'
   },
   request: {
     logout: '请求失败后登出用户',
@@ -155,7 +157,9 @@ const local: App.I18n.Schema = {
     500: '服务器错误',
     'iframe-page': '外链页面',
     home: '首页',
-    'user-center': '个人中心'
+    'user-center': '个人中心',
+    manage: '系统管理',
+    manage_user: '用户管理'
   },
   page: {
     login: {
@@ -270,6 +274,23 @@ const local: App.I18n.Schema = {
           addUser: '添加用户',
           editUser: '编辑用户',
           deleteUser: '删除用户'
+        }
+      }
+    },
+    manage: {
+      user: {
+        title: '用户列表',
+        roleName: '角色',
+        username: '用户名',
+        password: '密码',
+        lastLoginAt: '最后登录时间',
+        lastLoginIp: '最后登录IP',
+        addUser: '添加用户',
+        editUser: '编辑用户',
+        form: {
+          username: '请输入用户名',
+          password: '请输入密码',
+          roleName: '请选择角色'
         }
       }
     }

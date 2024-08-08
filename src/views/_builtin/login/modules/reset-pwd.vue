@@ -32,7 +32,7 @@ const rules = computed<RuleRecord>(() => {
 
   return {
     phone: formRules.phone,
-    password: formRules.pwd,
+    password: formRules.password,
     confirmPassword: createConfirmPwdRule(model.password)
   };
 });

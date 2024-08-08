@@ -48,7 +48,7 @@ function refresh() {
         </template>
         {{ $t('common.add') }}
       </NButton>
-      <NPopconfirm @positive-click="batchDelete">
+      <NPopconfirm v-if="disabledDelete" @positive-click="batchDelete">
         <template #trigger>
           <NButton size="small" ghost type="error" :disabled="disabledDelete">
             <template #icon>
@@ -66,7 +66,7 @@ function refresh() {
       </template>
       {{ $t('common.refresh') }}
     </NButton>
-    <TableColumnSetting v-model:columns="columns" />
+    <TableColumnSetting v-if="columns.length > 0" v-model:columns="columns" />
     <slot name="suffix"></slot>
   </NSpace>
 </template>

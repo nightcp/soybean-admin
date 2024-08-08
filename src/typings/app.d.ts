@@ -329,6 +329,8 @@ declare namespace App {
           yes: string;
           no: string;
         };
+        createdAt: string;
+        updatedAt: string;
       };
       request: {
         logout: string;
@@ -508,6 +510,23 @@ declare namespace App {
               addUser: string;
               editUser: string;
               deleteUser: string;
+            };
+          };
+        };
+        manage: {
+          user: {
+            title: string;
+            roleName: string;
+            username: string;
+            password: string;
+            lastLoginIp: string;
+            lastLoginAt: string;
+            addUser: string;
+            editUser: string;
+            form: {
+              username: string;
+              password: string;
+              roleName: string;
             };
           };
         };

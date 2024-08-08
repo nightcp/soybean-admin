@@ -47,7 +47,9 @@ const local: App.I18n.Schema = {
     yesOrNo: {
       yes: 'Yes',
       no: 'No'
-    }
+    },
+    createdAt: 'Created At',
+    updatedAt: 'Updated At'
   },
   request: {
     logout: 'Logout user after request failed',
@@ -155,7 +157,9 @@ const local: App.I18n.Schema = {
     500: 'Server Error',
     'iframe-page': 'Iframe',
     home: 'Home',
-    'user-center': 'User Center'
+    'user-center': 'User Center',
+    manage: 'System Manage',
+    manage_user: 'User Manage'
   },
   page: {
     login: {
@@ -270,6 +274,23 @@ const local: App.I18n.Schema = {
           addUser: 'Add User',
           editUser: 'Edit User',
           deleteUser: 'Delete User'
+        }
+      }
+    },
+    manage: {
+      user: {
+        title: 'User List',
+        roleName: 'Role',
+        username: 'User Name',
+        password: 'Password',
+        lastLoginAt: 'Last Logon Time',
+        lastLoginIp: 'Last Login IP',
+        addUser: 'Add User',
+        editUser: 'Edit User',
+        form: {
+          username: 'Please enter a user name',
+          password: 'Please enter the password',
+          roleName: 'Please select a role'
         }
       }
     }

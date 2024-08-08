@@ -23,8 +23,8 @@ const rules = computed<Record<keyof FormModel, App.Global.FormRule[]>>(() => {
   const { formRules, createConfirmPwdRule } = useFormRules();
 
   return {
-    oldPassword: formRules.pwd,
-    newPassword: formRules.pwd,
+    oldPassword: formRules.password,
+    newPassword: formRules.password,
     confirmPassword: createConfirmPwdRule(model.newPassword)
   };
 });
