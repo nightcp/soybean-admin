@@ -159,7 +159,8 @@ const local: App.I18n.Schema = {
     home: '首页',
     'user-center': '个人中心',
     manage: '系统管理',
-    manage_user: '用户管理'
+    manage_user: '用户管理',
+    manage_role: '角色管理'
   },
   page: {
     login: {
@@ -291,6 +292,15 @@ const local: App.I18n.Schema = {
           username: '请输入用户名',
           password: '请输入密码',
           roleName: '请选择角色'
+        }
+      },
+      role: {
+        title: '角色列表',
+        name: '名称',
+        addRole: '添加角色',
+        editRole: '编辑角色',
+        form: {
+          name: '请输入名称'
         }
       }
     }

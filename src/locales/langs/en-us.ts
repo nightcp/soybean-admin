@@ -159,7 +159,8 @@ const local: App.I18n.Schema = {
     home: 'Home',
     'user-center': 'User Center',
     manage: 'System Manage',
-    manage_user: 'User Manage'
+    manage_user: 'User Manage',
+    manage_role: 'Role Manage'
   },
   page: {
     login: {
@@ -291,6 +292,15 @@ const local: App.I18n.Schema = {
           username: 'Please enter a user name',
           password: 'Please enter the password',
           roleName: 'Please select a role'
+        }
+      },
+      role: {
+        title: 'Role List',
+        name: 'Name',
+        addRole: 'Add Role',
+        editRole: 'Edit Role',
+        form: {
+          name: 'Please enter a name'
         }
       }
     }

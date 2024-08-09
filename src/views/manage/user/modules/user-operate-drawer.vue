@@ -26,15 +26,8 @@ const props = defineProps<Props>();
 const emit = defineEmits<Emits>();
 const visible = defineModel<boolean>('visible', { default: false });
 const model: Model = reactive(createDefaultModel());
-// const rules: Record<RuleKey, App.Global.FormRule[]> = {
-//   username: formRules.username,
-//   password: props.operateType === 'edit' ? [] : formRules.password,
-//   role_id: [createRequiredRule($t('page.manage.user.form.roleName'))]
-// };
 const rules: Record<RuleKey, App.Global.FormRule[]> = reactive(createDefautlRules());
-
 const roleOptions = ref<CommonType.Option<string>[]>([]);
-
 const title = computed(() => {
   const titles: Record<NaiveUI.TableOperateType, string> = {
     add: $t('page.manage.user.addUser'),

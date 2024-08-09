@@ -529,6 +529,15 @@ declare namespace App {
               roleName: string;
             };
           };
+          role: {
+            title: string;
+            name: string;
+            addRole: string;
+            editRole: string;
+            form: {
+              name: string;
+            };
+          };
         };
       };
       form: {
